@@ -1,0 +1,60 @@
+=======================================================================
+overlap proportional target dict_items([('target', 264.30275476843434), ('holder', 838.7329779544277), ('opinion', 1189.4480158730166)])
+overlap proportional predicted dict_items([('target', 354.00268544235274), ('holder', 856.4815545565543), ('opinion', 1077.6283549783554)])
+predicted_p dict_items([('target', 2255), ('holder', 2040), ('opinion', 2469)])
+target_p dict_items([('target', 547), ('opinion', 1702), ('holder', 1267)])
+==============================================
+overlap binary dict_items([('target', 374), ('holder', 928), ('opinion', 1325)])
+overlap predict binary  dict_items([('target', 435), ('holder', 953), ('opinion', 1334)])
+predicted_b dict_items([('target', 2255), ('holder', 2040), ('opinion', 2469)])
+target_b dict_items([('target', 547), ('opinion', 1702), ('holder', 1267)])
+global evaluation: 
+proportional ===================================================
+recall  dict_items([('target', 48.32), ('holder', 66.2), ('opinion', 69.89)])
+precision dict_items([('target', 15.7), ('holder', 41.980000000000004), ('opinion', 43.65)])
+f1 score dict_items([('target', 23.7), ('holder', 51.38), ('opinion', 53.74)])
+binary ======== ===================================================
+recall  dict_items([('target', 68.37), ('holder', 73.24000000000001), ('opinion', 77.85)])
+precision dict_items([('target', 19.29), ('holder', 46.72), ('opinion', 54.03)])
+f1 score dict_items([('target', 30.09), ('holder', 57.05), ('opinion', 63.79)]) 
+
+=======================================================================
+overlap proportional target dict_items([('target', 324.84869544487884), ('holder', 665.8813712459996), ('opinion', 1023.629761904762)])
+overlap proportional predicted dict_items([('target', 445.2268245041851), ('holder', 676.048629148629), ('opinion', 902.0742063492065)])
+predicted_p dict_items([('target', 2054), ('holder', 1781), ('opinion', 2259)])
+target_p dict_items([('target', 727), ('opinion', 1482), ('holder', 1066)])
+==============================================
+overlap binary dict_items([('target', 468), ('holder', 739), ('opinion', 1111)])
+overlap predict binary  dict_items([('target', 541), ('holder', 760), ('opinion', 1122)])
+predicted_b dict_items([('target', 2054), ('holder', 1781), ('opinion', 2259)])
+target_b dict_items([('target', 727), ('opinion', 1482), ('holder', 1066)])
+global evaluation: 
+proportional ===================================================
+recall  dict_items([('target', 44.68), ('holder', 62.470000000000006), ('opinion', 69.07)])
+precision dict_items([('target', 21.68), ('holder', 37.96), ('opinion', 39.93)])
+f1 score dict_items([('target', 29.19), ('holder', 47.22), ('opinion', 50.6)])
+binary ======== ===================================================
+recall  dict_items([('target', 64.37), ('holder', 69.32000000000001), ('opinion', 74.97)])
+precision dict_items([('target', 26.340000000000003), ('holder', 42.67), ('opinion', 49.669999999999995)])
+f1 score dict_items([('target', 37.38), ('holder', 52.82), ('opinion', 59.75)]) 
+
+=======================================================================
+overlap proportional target dict_items([('target', 3240.418418501244), ('holder', 5418.991582103604), ('opinion', 7344.341919191926)])
+overlap proportional predicted dict_items([('target', 2710.105281035355), ('holder', 4968.798973092528), ('opinion', 6459.482889332924)])
+predicted_p dict_items([('target', 7727), ('holder', 7628), ('opinion', 10129)])
+target_p dict_items([('target', 3374), ('holder', 5486), ('opinion', 7554)])
+==============================================
+overlap binary dict_items([('target', 3329), ('holder', 5438), ('opinion', 7391)])
+overlap predict binary  dict_items([('target', 3387), ('holder', 5434), ('opinion', 7334)])
+predicted_b dict_items([('target', 7727), ('holder', 7628), ('opinion', 10129)])
+target_b dict_items([('target', 3374), ('holder', 5486), ('opinion', 7554)])
+global evaluation: 
+proportional ===================================================
+recall  dict_items([('target', 96.04), ('holder', 98.78), ('opinion', 97.22)])
+precision dict_items([('target', 35.07), ('holder', 65.14), ('opinion', 63.77)])
+f1 score dict_items([('target', 51.38), ('holder', 78.51), ('opinion', 77.02)])
+binary ======== ===================================================
+recall  dict_items([('target', 98.67), ('holder', 99.13), ('opinion', 97.84)])
+precision dict_items([('target', 43.830000000000005), ('holder', 71.24000000000001), ('opinion', 72.41)])
+f1 score dict_items([('target', 60.7), ('holder', 82.9), ('opinion', 83.23)]) 
+

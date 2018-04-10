@@ -1,0 +1,101 @@
+from keras.layers.core import Dense
+from keras.layers.recurrent import LSTM
+from keras.layers import Bidirectional, TimeDistributed, Dropout
+from keras.layers.embeddings import Embedding
+from keras.models import Sequential
+from keras.optimizers import Adadelta
+from keras_contrib.layers import CRF
+
+import numpy as np
+import matplotlib
+matplotlib.use('Agg')
+import matplotlib.pyplot as plt
+import json
+np.random.seed(7)
+ftp = open('data/config.json')
+config = json.load(ftp)
+maxlen = config['maxlen']
+vocab_sz = config['vocab_sz']
+num_recs = config['num_recs']
+embed_size= config['embed_size']
+hidden_units = 50
+epochs=200
+batch_size=48
+n_symbols = vocab_sz+1
+
+embedding_weights=np.load('data/google_word2vec.npy')
+
+#### load data
+Xtrain= np.load('data/Xtrain.npy')
+ytrain = np.load('data/ytrain.npy')
+Xtest = np.load('data/Xtest.npy')
+ytest = np.load('data/ytest.npy')
+Xdev = np.load('data/Xdev.npy')
+ydev = np.load('data/ydev.npy')
+
+filepath='experiments/bilstm_noembed/crf/07'
+import sys
+sys.stdout = open(filepath+'/out.txt','w+')
+
+# model
+model = Sequential()
+model.add(Embedding(input_dim= n_symbols, output_dim= 100, input_length=maxlen,  mask_zero = True))
+model.add(Dropout(rate = 0.2))
+model.add(Bidirectional(LSTM(hidden_units, return_sequences=True,kernel_initializer='random_uniform'  )))
+model.add(Dropout(rate = 0.2))
+model.add(Bidirectional(LSTM(hidden_units, return_sequences=True,kernel_initializer='random_uniform'  )))
+model.add(Dropout(rate = 0.2))
+model.add(Bidirectional(LSTM(hidden_units, return_sequences=True, kernel_initializer='random_uniform'  )))
+
+model.add(Dropout(rate=0.2))
+model.add(TimeDistributed(Dense(hidden_units, kernel_initializer='random_uniform')))
+
+crf=CRF(7, learn_mode='marginal')
+model.add(crf)
+# compile model
+model.compile(optimizer = 'adadelta', loss='categorical_crossentropy', metrics=[crf.accuracy])
+# fit model
+history= model.fit(Xtrain, ytrain, batch_size=batch_size, epochs=epochs, validation_data=(Xdev, ydev),verbose=1)
+
+# model evaluate
+score, acc = model.evaluate(Xtest, ytest, verbose=1)
+
+#################################################################################################
+yhat_test = model.predict_classes(Xtest, verbose=1)
+np.save(filepath+'/predict_test.npy',arr=yhat_test)
+
+yhat_train= model.predict_classes(Xtrain, verbose=1)
+np.save(filepath+'/predict_train.npy',arr=yhat_train)
+
+yhat_dev= model.predict_classes(Xdev, verbose=1)
+np.save(filepath+'/predict_dev.npy',arr=yhat_dev)
+
+##################################################################################################
+with open(filepath+'/model_loss_accuracy','w+')as file:
+    file.write('bidirectional lstm base model with adadelta optimizer\n')
+    file.write('epochs:'+str(epochs)+'\n')
+    file.write('test score : '+str(score)+'\n')
+    file.write('test accuracy: '+str(acc)+'\n')
+    file.write('\n')
+
+
+##################################################################################################
+fig1=plt.figure()
+plt.subplot(211)
+plt.title("Accuracy")
+plt.plot(history.history["acc"],figure=fig1)
+plt.plot(history.history["val_acc"],figure=fig1)
+plt.ylabel("accuracy")
+plt.xlabel("epoch")
+plt.legend(['train','test'], loc='upper left')
+fig1.savefig(filepath+'/accuracy.png')
+
+fig2= plt.figure()
+plt.subplot(212)
+plt.title("Loss")
+plt.plot(history.history["loss"],figure=fig2)
+plt.plot(history.history["val_loss"], figure=fig2)
+plt.ylabel("loss")
+plt.xlabel("epoch")
+plt.legend(['train','test'], loc='upper left')
+fig2.savefig(filepath+'/loss.png')

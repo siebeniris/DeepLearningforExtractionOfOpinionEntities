@@ -1,0 +1,5 @@
+cnn kernel_size 3
+epochs:200
+test score : 0.2068922470654211
+test accuracy: 0.9251956409023654
+

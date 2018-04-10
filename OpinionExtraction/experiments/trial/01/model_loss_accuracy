@@ -1,0 +1,5 @@
+bidirectional lstm base model with adadelta optimizer
+epochs:10
+test score : 13.836746584984564
+test accuracy: 0.7614300750917004
+

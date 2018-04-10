@@ -1,0 +1,57 @@
+=======================================================================
+overlap proportional dict_items([('target', 877), ('opinion', 1877), ('holder', 1803)])
+predicted_p dict_items([('target', 3648), ('opinion', 3027), ('holder', 3069)])
+target_p dict_items([('target', 3295), ('opinion', 3119), ('holder', 3201)])
+==============================================
+overlap binary dict_items([('target', 219), ('opinion', 1282), ('holder', 863)])
+overlap predict binary  dict_items([('target', 244), ('opinion', 1276), ('holder', 875)])
+predicted_b dict_items([('target', 894), ('opinion', 1807), ('holder', 1394)])
+target_b dict_items([('target', 547), ('opinion', 1702), ('holder', 1267)])
+global evaluation: 
+proportional ===================================================
+recall  dict_items([('target', 26.619999999999997), ('opinion', 60.18), ('holder', 56.330000000000005)])
+precision dict_items([('target', 24.04), ('opinion', 62.01), ('holder', 58.75)])
+f1 score dict_items([('target', 25.26), ('opinion', 61.08), ('holder', 57.51)])
+binary ======== ===================================================
+recall  dict_items([('target', 40.04), ('opinion', 75.32), ('holder', 68.11)])
+precision dict_items([('target', 27.29), ('opinion', 70.61), ('holder', 62.77)])
+f1 score dict_items([('target', 32.46), ('opinion', 72.89), ('holder', 65.33)]) 
+
+=======================================================================
+overlap proportional dict_items([('target', 1089), ('opinion', 1599), ('holder', 1444)])
+predicted_p dict_items([('target', 3065), ('opinion', 2751), ('holder', 2475)])
+target_p dict_items([('target', 4298), ('opinion', 2502), ('holder', 2587)])
+==============================================
+overlap binary dict_items([('target', 280), ('opinion', 1116), ('holder', 700)])
+overlap predict binary  dict_items([('target', 303), ('opinion', 1110), ('holder', 715)])
+predicted_b dict_items([('target', 791), ('opinion', 1590), ('holder', 1148)])
+target_b dict_items([('target', 727), ('opinion', 1482), ('holder', 1066)])
+global evaluation: 
+proportional ===================================================
+recall  dict_items([('target', 25.34), ('opinion', 63.91), ('holder', 55.82)])
+precision dict_items([('target', 35.53), ('opinion', 58.120000000000005), ('holder', 58.34)])
+f1 score dict_items([('target', 29.58), ('opinion', 60.88), ('holder', 57.05)])
+binary ======== ===================================================
+recall  dict_items([('target', 38.51), ('opinion', 75.3), ('holder', 65.67)])
+precision dict_items([('target', 38.31), ('opinion', 69.81), ('holder', 62.28)])
+f1 score dict_items([('target', 38.41), ('opinion', 72.45), ('holder', 63.93)]) 
+
+=======================================================================
+overlap proportional dict_items([('target', 19496), ('opinion', 13538), ('holder', 12874)])
+predicted_p dict_items([('target', 19835), ('opinion', 13923), ('holder', 13166)])
+target_p dict_items([('target', 19852), ('opinion', 13894), ('holder', 12970)])
+==============================================
+overlap binary dict_items([('target', 3161), ('opinion', 7317), ('holder', 5412)])
+overlap predict binary  dict_items([('target', 3167), ('opinion', 7306), ('holder', 5408)])
+predicted_b dict_items([('target', 3268), ('opinion', 7481), ('holder', 5598)])
+target_b dict_items([('target', 3374), ('opinion', 7554), ('holder', 5486)])
+global evaluation: 
+proportional ===================================================
+recall  dict_items([('target', 98.21), ('opinion', 97.44), ('holder', 99.26)])
+precision dict_items([('target', 98.29), ('opinion', 97.23), ('holder', 97.78)])
+f1 score dict_items([('target', 98.25), ('opinion', 97.33), ('holder', 98.51)])
+binary ======== ===================================================
+recall  dict_items([('target', 93.69), ('opinion', 96.86), ('holder', 98.65)])
+precision dict_items([('target', 96.91), ('opinion', 97.66), ('holder', 96.61)])
+f1 score dict_items([('target', 95.27), ('opinion', 97.26), ('holder', 97.62)]) 
+

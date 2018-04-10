@@ -1,0 +1,21 @@
+experiments/cnn_embed/notrainable/crf/08
+# model
+model = Sequential()
+model.add(Embedding(input_dim= n_symbols, output_dim= embed_size, trainable=False, input_length=maxlen, weights=[embedding_weights]))
+model.add(Dropout(rate = 0.5))
+model.add(Conv1D(filters=filters, kernel_size=5, strides=1, padding="same"))
+model.add(Dropout(rate = 0.5))
+model.add(Conv1D(filters=filters, kernel_size=5, strides=1, padding="same"))
+model.add(Dropout(rate = 0.5))
+model.add(Conv1D(filters=filters, kernel_size=5, strides=1, padding="same"))
+model.add(Dropout(rate = 0.5))
+model.add(Conv1D(filters=filters, kernel_size=5, strides=1, padding="same"))
+model.add(Dropout(rate = 0.5))
+# model.add(Dense(units = 50))
+
+crf = CRF(7, learn_mode='join')
+model.add(crf)
+
+# compile model
+model.compile(optimizer = 'adadelta', loss=crf.loss_function, metrics=[crf.accuracy], sample_weight_mode='temporal')
+print(model.summary())
